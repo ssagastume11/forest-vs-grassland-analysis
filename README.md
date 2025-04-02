@@ -1,2 +1,18 @@
 # forest-vs-grassland-analysis
 "Forest vs. Grassland Bird Distribution Analysis" This project exams bird species distributions in forest and grassland habitats using NCRN LAND Bird Monitoring data (2007-2017). It explores species richness, abundance, and habitat differences to support conservation efforts.
+
+# Introduction
+Bird populations serve as essential indicators of ecosystem health. This study examines bird species distributions within grassland habitats in the National Capital Region (NCR) using data from the NCRN LAND Bird Monitoring Data (2007 - 2017) dataset. By analyzing species richness, abundance, and habitat preferences, this study provides insights that can inform conservation strategies and land management practices.
+
+# Scenario
+Over a span of ten years, bird observations were systematically recorded across national parks in the National Capital Region. Initially, surveys focused on forest environments, but monitoring efforts expanded to include grassland sites in 2014. The goal is to compare the diversity and abundance of bird species in grassland environments and identify key conservation needs.
+
+# Ask
+## Business Problem
+How do bird species distributions vary within grassland habitats, and what conservation measures can be implemented to support bird populations in these areas?
+
+## Key Questions
+* What are the most common bird species in grassland habitats?
+* How does species richness compare to other habitats?
+* Are certain bird species particularly abundant or rare in grasslands?
+* What trends emerge when visualizing species distributions in grasslands?
