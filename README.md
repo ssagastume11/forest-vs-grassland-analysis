@@ -51,3 +51,28 @@ bird_data_clean <- bird_data %>%
 # Verify clean dataset
 summary(bird_data_clean)
 ```
+## Analyze
+### 1. Bird Species Count by Habitat
+```r
+species_distribution <- bird_data_clean %>%
+  group_by(Common_Name) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  arrange(desc(count))
+
+# Display top species
+kable(head(species_distribution, 10), caption = "Top 10 Bird Species in Grassland Habitats")
+```
+
+### 2. Visualization: Species Distribution in Grasslands
+```r
+ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  labs(
+    title = "Bird Species Distribution in Grassland Habitats",
+    x = "Species",
+    y = "Observation Count",
+    caption = "Source: NCRN LAND Bird Monitoring Data (2007 - 2017), catalog.data.gov"
+  ) +
+  theme_minimal()
+```
