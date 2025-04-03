@@ -41,7 +41,7 @@ library(readxl)
 library(knitr)
 
 # Load dataset
-bird_data <- read_excel("/path/to/dataset.xlsx")
+bird_data <- read_excel("NCRN LAND Bird Monitoring Data 2007 - 2017_Public.xlsx")
 
 # Clean the dataset
 bird_data_clean <- bird_data %>%
