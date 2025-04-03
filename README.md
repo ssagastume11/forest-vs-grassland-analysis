@@ -16,3 +16,38 @@ How do bird species distributions vary within grassland habitats, and what conse
 * How does species richness compare to other habitats?
 * Are certain bird species particularly abundant or rare in grasslands?
 * What trends emerge when visualizing species distributions in grasslands?
+
+## Prepare
+**Dataset:** NCRN LAND Bird Monitoring Data (2007 - 2017)  
+**Source:** [Catalog.Data.Gov](https://catalog.data.gov)  
+
+**Data Summary:**
+- Observations collected at various grassland sites
+- Variables include species, count, location type, weather conditions, and observer details
+- Data is structured with point-count survey records
+
+## Process
+### Data Cleaning Steps:
+1. Remove missing or inconsistent values
+2. Standardize column names for easy analysis
+3. Convert categorical variables (e.g., species names) into factors
+4. Aggregate data by location type and species
+
+```r
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+library(readxl)
+library(knitr)
+
+# Load dataset
+bird_data <- read_excel("/path/to/dataset.xlsx")
+
+# Clean the dataset
+bird_data_clean <- bird_data %>%
+  filter(!is.na(Common_Name), !is.na(Location_Type)) %>%
+  mutate(location_type = as.factor(Location_Type))
+
+# Verify clean dataset
+summary(bird_data_clean)
+```
