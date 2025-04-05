@@ -76,3 +76,22 @@ ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count)) +
   ) +
   theme_minimal()
 ```
+
+## Share
+### Key Findings
+1. Grassland habitats support a unique set of bird species with distinct distribution patterns.
+2. Certain species show higher abundance in specific locations, suggesting habitat preferences.
+3. Conservation strategies should focus on preserving habitat diversity to sustain bird populations.
+
+## Act
+### Key Takeaways
+- Understanding species distributions helps inform conservation policies.
+- Monitoring efforts should continue to track long-term population trends.
+- Engaging the public in conservation efforts can support habitat protection.
+
+## Recommendations
+1. **Enhance Habitat Protection:** Support conservation policies that maintain grassland ecosystems.
+2. **Increase Monitoring Efforts:** Expand data collection to assess long-term population trends.
+3. **Community Engagement:** Educate local communities on the importance of habitat conservation.
+
+This analysis provides data-driven insights that guide ecological decision-making and habitat management strategies.
