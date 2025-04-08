@@ -86,7 +86,7 @@ kable(head(species_distribution, 10), caption = "Top 10 Bird Species in Grasslan
 ```
 
 ### 2. Visualization: Species Distribution in Grasslands
-
+[Species distribution bar chart](Species distribution bar.png)
 ```r
 ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count)) +
   geom_bar(stat = "identity", fill = "steelblue") +
@@ -98,7 +98,6 @@ ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count)) +
     caption = "Source: NCRN LAND Bird Monitoring Data (2007 - 2017), catalog.data.gov"
   ) +
   theme_minimal()
-[Species distribution bar chart](Species distribution bar.png)
 ```
 
 ---
