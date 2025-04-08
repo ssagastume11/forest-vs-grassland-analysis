@@ -98,6 +98,7 @@ ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count)) +
     caption = "Source: NCRN LAND Bird Monitoring Data (2007 - 2017), catalog.data.gov"
   ) +
   theme_minimal()
+[Species distribution bar chart]()
 ```
 
 ---
