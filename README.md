@@ -99,7 +99,15 @@ ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count)) +
   ) +
   theme_minimal()
 ```
+## 3. Species Richness by Habitat
+```{r}
+species_richness <- bird_data_clean %>%
+  group_by(location_type) %>%
+  summarise(total_species = n_distinct(Common_Name))
 
+# Display species richness
+kable(species_richness, caption = "Species Richness in Forest and Grassland Habitats")
+```
 ---
 
 ## 📢 Share
