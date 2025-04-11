@@ -77,27 +77,29 @@ summary(bird_data_clean)
 
 ```r
 species_distribution <- bird_data_clean %>%
-  group_by(Common_Name) %>%
+  group_by(location_type, Common_Name) %>%
   summarise(count = n(), .groups = "drop") %>%
-  arrange(desc(count))
+  arrange(location_type, desc(count))
 
-# Display top species
-kable(head(species_distribution, 10), caption = "Top 10 Bird Species in Grassland Habitats")
+# Display top species per habitat
+kable(head(species_distribution, 10), caption = "Top 10 Bird Species by Habitat Type")
 ```
 
 ### 2. Visualization: Species Distribution in Grasslands
 ![Species Distribution bar chart](https://raw.githubusercontent.com/ssagastume11/forest-vs-grassland-analysis/refs/heads/main/Species%20distribution%20bar.png)
 ```r
-ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
+ggplot(species_distribution, aes(x = reorder(Common_Name, -count), y = count, fill = location_type)) +
+  geom_bar(stat = "identity", position = "dodge") +
   coord_flip() +
   labs(
-    title = "Bird Species Distribution in Grassland Habitats",
+    title = "Bird Species Distribution in Forest vs. Grassland",
     x = "Species",
     y = "Observation Count",
+    fill = "Habitat Type",
     caption = "Source: NCRN LAND Bird Monitoring Data (2007 - 2017), catalog.data.gov"
   ) +
-  theme_minimal()
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 ## 3. Species Richness by Habitat
 ```{r}
